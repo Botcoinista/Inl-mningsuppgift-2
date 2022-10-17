@@ -56,24 +56,31 @@ body {
   width: 100%;
 }
 .btn-primary {
-  background-color: hsl(180, 25%, 25%);
+  background-color: hsl(355, 25%, 30%);
   color: #ffffff;
   transition: background 70ms;
 }
 .btn-primary:hover,
 .btn-primary:focus {
-  background-color: hsl(180, 25%, 30%);
+  background-color: hsl(180, 25%, 20%);
 }
 .btn-primary:active {
-  background-color: hsl(180, 25%, 20%);
+  background-color: hsl(355, 25%, 30%);
 }
 .validation-feedback {
   margin-top: 1rem;
   text-align: center;
+  color:red
 }
 #errorMessage {
   color: red;
 }
 .d-none {
   display: none;
+}
+
+.messageUser{
+margin-top: 1rem;
+text-align: center;
+color: green;
 }
