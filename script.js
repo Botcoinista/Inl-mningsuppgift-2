@@ -5,7 +5,6 @@ const password = document.getElementById ("password");
 const repeatPassword = document.getElementById ("repeatPassword");
 const terms = document.getElementById ("terms");
 const form = document.getElementById ("validationForm");
-// const messageEmail2 = document.getElementById ("messageEmail2")
 
  
 
@@ -56,6 +55,7 @@ const validateEmail = (email) => {
     }
     else {
         return true;
+        
     }
 
 }
@@ -104,9 +104,15 @@ const validatePassword = (input) => {
     
     }
 
+const error = () => {
+    errorMessage.classlist.remove("d.none");
+    return false;
+}
+
 
 const success = () => {
     console.log("Du har skapat ett formulär!")
+    errorMessage.classList.add("d-none");
     messageUser.innerHTML = ("Du har skapat ett formulär! ")
     const user = {
         firstname: firstname.value, 
@@ -115,47 +121,23 @@ const success = () => {
         password: password.value
     }
     console.log(user)
+    return true;
 }
 
 
 form.addEventListener( "submit", (e) =>  {
     e.preventDefault ();
-
+    
     if (validateTextFirstName (firstname) && 
         validateTextLastName (lastname) && 
         validateEmail (email) &&
         validatePassword (password) &&
-        validateTerms (terms)) 
-        {
-            success()
-        }      
+        validateTerms (terms)) {
+            console.log('Du har skapat ett formulär!')
+        return success();
+        } else {
+            return error()
+        }
+           
 })
 
-// let firstname2 = "Josef";
-// let lastname2 = "Reinhold";
-
-// let FULLNAME = `Jag heter ${firstname2} i förnamn och ${lastname2} i efternamn!`
-// console.log(FULLNAME)
-
-
-// function calc (num1, num2, op){
-//     switch (op) {
-//         case "+":
-//             return num1 + num2 
-         
-//         case "-":
-//             return num1 - num2    
-            
-//         case "/":
-//             return num1 / num2 
-    
-//         default:
-//             console.log("invalid op")
-//             break;
-//     }
-    
-// }
-
-// const summa = calc (2,2,"+")
-// console.log(summa)
-// console.log(calc (2,2,"+"))
